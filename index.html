@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuru Kar AI & YourStory | Collaboration Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Startup Growth (Warm Neutrals, Teal, Gold Accents) -->
+    <!-- Application Structure Plan: A section-based SPA with a sticky navigation bar for easy access to key information. The structure prioritizes a logical flow for a pitch: starting with the high-level opportunity, detailing the process with an interactive timeline, showcasing the compelling incentives with a chart, defining the partnership roles, and ending with clear next steps. This non-linear, interactive structure allows busy stakeholders to quickly find the information most relevant to them, making it more engaging and effective than a linear document. -->
+    <!-- Visualization & Content Choices:
+        - Why Partner?: Info -> Goal: Inform -> Viz: Icon-driven cards (HTML/CSS) -> Interaction: Hover effects -> Justification: More scannable and visually engaging than a bullet list.
+        - Timeline: Info -> Goal: Show Process -> Viz: Interactive timeline (JS) & a Bar Chart (Chart.js) -> Interaction: Click to reveal phase details -> Justification: Transforms a static table into an interactive element, making the 2-week plan tangible.
+        - Incentives: Info -> Goal: Compare/Inform -> Viz: Bar Chart (Chart.js) & info cards -> Interaction: Hovering chart highlights corresponding data -> Justification: Visually communicates the scale of the rewards, which is more impactful than text.
+        - Partnership Roles: Info -> Goal: Organize/Compare -> Viz: Two-column layout (Tailwind Flexbox) -> Interaction: None -> Justification: Provides a clear, side-by-side comparison for easy understanding.
+        - Long-Term Synergy: Info -> Goal: Inform -> Viz: Accordion/Toggle (JS) -> Interaction: Click to expand/collapse -> Justification: Manages information density using progressive disclosure.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #E67E22;
+            border-bottom-color: #E67E22;
+        }
+        .timeline-item.active .timeline-dot {
+            background-color: #E67E22;
+        }
+        .timeline-item.active .timeline-title {
+            color: #D35400;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-800">Shuru Kar AI <span class="text-[#E67E22]">&</span> YourStory</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#opportunity" class="nav-link font-medium pb-1">The Opportunity</a>
+                <a href="#how-it-works" class="nav-link font-medium pb-1">How It Works</a>
+                <a href="#incentives" class="nav-link font-medium pb-1">Incentives</a>
+                <a href="#partnership" class="nav-link font-medium pb-1">Partnership</a>
+                <a href="#next-steps" class="nav-link font-medium pb-1">Next Steps</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#opportunity" class="block py-2 px-4 text-sm hover:bg-gray-200">The Opportunity</a>
+            <a href="#how-it-works" class="block py-2 px-4 text-sm hover:bg-gray-200">How It Works</a>
+            <a href="#incentives" class="block py-2 px-4 text-sm hover:bg-gray-200">Incentives</a>
+            <a href="#partnership" class="block py-2 px-4 text-sm hover:bg-gray-200">Partnership</a>
+            <a href="#next-steps" class="block py-2 px-4 text-sm hover:bg-gray-200">Next Steps</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Partner to Empower India's Next Innovators</h2>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join us in a 2-week pilot to bring the Shuru Kar AI WhatsApp Copilot to your incubator network, offering your founders a direct path to the Bihar Idea Festival, funding, and national recognition.</p>
+                <a href="#opportunity" class="mt-8 inline-block bg-[#E67E22] text-white font-bold rounded-lg px-8 py-3 text-lg hover:bg-[#D35400] transition duration-300">Explore the Collaboration</a>
+            </div>
+        </section>
+
+        <section id="opportunity" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl font-bold">The Opportunity for Your Incubator</h3>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">This collaboration is designed to provide tangible value to your incubator and the startups you support. Here's what you gain by partnering with us.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="text-4xl text-[#E67E22] mb-4">✨</div>
+                        <h4 class="text-xl font-bold mb-2">Exclusive Access</h4>
+                        <p class="text-gray-600">Be among the first to experience and shape our WhatsApp Copilot, an AI assistant built specifically for the challenges and opportunities in India's emerging startup landscape.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="text-4xl text-[#E67E22] mb-4">🏆</div>
+                        <h4 class="text-xl font-bold mb-2">Direct Founder Incentives</h4>
+                        <p class="text-gray-600">Your founders get a chance to win ₹5 lakh, full scholarships, elite mentorship, and national publicity through the prestigious Bihar Idea Festival.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="text-4xl text-[#E67E22] mb-4">📢</div>
+                        <h4 class="text-xl font-bold mb-2">Visibility & Impact</h4>
+                        <p class="text-gray-600">Your incubator's key role will be highlighted in all festival communications, amplifying your brand as a leader in fostering grassroots entrepreneurship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-4xl font-bold">How It Works: A 2-Week Pilot</h3>
+                    <p class="mt-3 text-gray-600 max-w-3xl mx-auto">We propose a straightforward 2-week pilot designed for maximum impact with minimal overhead for your team. Click on each phase below to see the details.</p>
+                </div>
+                
+                <div class="mb-12">
+                    <div class="relative">
+                        <div class="absolute left-1/2 -ml-0.5 w-1 h-full bg-gray-200"></div>
+                        <div id="timeline-container" class="grid grid-cols-3 text-center">
+                            <div class="timeline-item cursor-pointer p-4" data-phase="promotion">
+                                <div class="timeline-dot relative w-6 h-6 mx-auto bg-gray-300 rounded-full border-4 border-white"></div>
+                                <h5 class="timeline-title font-bold mt-2 text-gray-500">Phase 1: Promotion</h5>
+                                <p class="text-sm text-gray-500">Days 1-3</p>
+                            </div>
+                            <div class="timeline-item cursor-pointer p-4" data-phase="onboarding">
+                                <div class="timeline-dot relative w-6 h-6 mx-auto bg-gray-300 rounded-full border-4 border-white"></div>
+                                <h5 class="timeline-title font-bold mt-2 text-gray-500">Phase 2: Onboarding</h5>
+                                <p class="text-sm text-gray-500">Days 4-14</p>
+                            </div>
+                            <div class="timeline-item cursor-pointer p-4" data-phase="feedback">
+                                <div class="timeline-dot relative w-6 h-6 mx-auto bg-gray-300 rounded-full border-4 border-white"></div>
+                                <h5 class="timeline-title font-bold mt-2 text-gray-500">Phase 3: Feedback</h5>
+                                <p class="text-sm text-gray-500">Days 4-14</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="timeline-details" class="mt-8 p-8 bg-gray-50 rounded-lg min-h-[150px] transition-all duration-500">
+                    <div id="promotion-content" class="timeline-content hidden">
+                        <h4 class="font-bold text-xl mb-2 text-[#D35400]">Promotion & Awareness (Days 1-3)</h4>
+                        <p class="text-gray-700">Your key deliverable is to announce the WhatsApp Copilot to your incubator network. We will provide ready-to-use materials for email, WhatsApp groups, and social media to ensure maximum reach through your E-cell and alumni channels.</p>
+                    </div>
+                    <div id="onboarding-content" class="timeline-content hidden">
+                        <h4 class="font-bold text-xl mb-2 text-[#D35400]">User Onboarding & Idea Submission (Days 4-14)</h4>
+                        <p class="text-gray-700">Encourage and support founders in your network as they use the Copilot to submit their startup ideas. We'll provide reminders to highlight the opportunity to be featured at the Bihar Idea Festival and win significant prizes.</p>
+                    </div>
+                    <div id="feedback-content" class="timeline-content hidden">
+                        <h4 class="font-bold text-xl mb-2 text-[#D35400]">Feedback Collection (Days 4-14)</h4>
+                        <p class="text-gray-700">Following Copilot usage, founders will receive a simple feedback form. Your role is to help distribute this form and follow up to maximize responses, helping us refine the product for India's entrepreneurs.</p>
+                    </div>
+                    <div id="timeline-placeholder" class="text-center text-gray-500">
+                        <p>Click on a timeline phase above to view details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="incentives" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl font-bold">Founder Incentives: A Huge Draw</h3>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">This initiative is backed by life-changing opportunities for founders. The prospect of winning these prizes will drive high engagement from your network.</p>
+                </div>
+                <div class="lg:flex lg:items-center lg:space-x-12">
+                    <div class="lg:w-1/2">
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#E67E22]">
+                                <h4 class="font-bold text-lg">Top 10 Ideas</h4>
+                                <p class="text-gray-600">₹5 lakh each, full scholarships, national publicity on YourStory, mentorship, and incubation support.</p>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray-400">
+                                <h4 class="font-bold text-lg">Top 25 Ideas</h4>
+                                <p class="text-gray-600">Free enrolment in the TiE Patna Nurture Program.</p>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray-400">
+                                <h4 class="font-bold text-lg">Next 100 Ideas</h4>
+                                <p class="text-gray-600">Pitching opportunity before curated investors.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray-400">
+                                <h4 class="font-bold text-lg">All Applicants</h4>
+                                <p class="text-gray-600">Online starter kits, learning resources, and access to Bihar Startup Policy benefits.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 mt-12 lg:mt-0">
+                        <div class="chart-container">
+                            <canvas id="incentivesChart"></canvas>
+                        </div>
+                        <p class="text-center mt-4 text-gray-500 text-sm">Visual representation of prize distribution tiers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partnership" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h3 class="text-4xl font-bold">Collaborative Framework</h3>
+                    <p class="mt-3 text-gray-600 max-w-3xl mx-auto">This partnership is part of the broader "The Bharat Project" initiative by YourStory. Below are the defined roles to ensure a successful and mutually beneficial collaboration.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-12">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-center md:text-left">Role of the Incubator</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                            <li>Support outreach and promotion of initiatives within its founder ecosystem.</li>
+                            <li>Nominate promising startups for national showcases and events.</li>
+                            <li>Facilitate access for story shoots, interviews, and documentation.</li>
+                            <li>Enable The Bharat Project to plug into startup cohorts via AI Co-Pilot & masterclasses.</li>
+                            <li>Collaborate on co-hosting regional founder-led events (where feasible).</li>
+                            <li>Share non-confidential aggregated data to enrich our knowledge base.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-12 md:mt-0">
+                        <h4 class="text-2xl font-bold mb-4 text-center md:text-left">Role of YourStory</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                            <li>Act as the knowledge and execution partner for The Bharat Project.</li>
+                            <li>Create and deploy startup-focused digital content, tools, and formats.</li>
+                            <li>Organize the Build for Bharat Fellowship and mentorship programs.</li>
+                            <li>Curate and document 2,000+ high-potential startups from across the country.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-gray-50 p-8 rounded-lg">
+                    <button id="synergy-accordion" class="w-full flex justify-between items-center text-left">
+                        <h4 class="text-2xl font-bold">Long-Term Synergy & Future Opportunities</h4>
+                        <span id="accordion-icon" class="text-2xl font-bold text-[#E67E22] transform transition-transform duration-300">+</span>
+                    </button>
+                    <div id="synergy-content" class="accordion-content mt-4">
+                        <p class="text-gray-700">Strong participation from your college network signals significant regional interest. Given YourStory's commitment to the ecosystem, this pilot can unlock deeper future collaborations:</p>
+                        <ul class="mt-4 space-y-2 list-disc list-inside text-gray-700">
+                            <li><b>Enhanced Visibility:</b> Priority coverage for events conducted by your university on YourStory platforms.</li>
+                            <li><b>Subsidized Subscriptions:</b> Special pricing on products like Captable for your network of startups.</li>
+                            <li><b>Spotlight Initiatives:</b> Greater visibility for your college's unique programs and successes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-steps" class="py-20">
+             <div class="container mx-auto px-6 text-center">
+                 <h3 class="text-4xl font-bold">Ready to Empower Your Founders?</h3>
+                 <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Let's take the next steps to bring this opportunity to your network. At the end of the pilot, we will provide a full report on the engagement and impact.</p>
+                 <div class="mt-10 max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl mb-4">Proposed Next Steps</h4>
+                    <ul class="text-left space-y-3">
+                        <li class="flex items-start"><span class="text-[#E67E22] mr-3 mt-1">✓</span>Schedule a kickoff call to align on strategy.</li>
+                        <li class="flex items-start"><span class="text-[#E67E22] mr-3 mt-1">✓</span>Receive our ready-to-use promotional materials.</li>
+                        <li class="flex items-start"><span class="text-[#E67E22] mr-3 mt-1">✓</span>Get access to a dashboard to track progress.</li>
+                    </ul>
+                 </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Shuru Kar AI & YourStory. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Let's empower the next wave of Indian innovation, together.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Active Nav Link Styling
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.onscroll = () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 65) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            // Interactive Timeline
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineContents = document.querySelectorAll('.timeline-content');
+            const timelinePlaceholder = document.getElementById('timeline-placeholder');
+
+            // Set initial active state
+            const initialPhase = 'promotion';
+            document.querySelector(`.timeline-item[data-phase='${initialPhase}']`).classList.add('active');
+            document.getElementById(`${initialPhase}-content`).classList.remove('hidden');
+            timelinePlaceholder.classList.add('hidden');
+
+            timelineItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const phase = item.dataset.phase;
+
+                    timelineItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    timelineContents.forEach(content => content.classList.add('hidden'));
+                    document.getElementById(`${phase}-content`).classList.remove('hidden');
+
+                    timelinePlaceholder.classList.add('hidden');
+                });
+            });
+
+            // Accordion
+            const synergyAccordion = document.getElementById('synergy-accordion');
+            const synergyContent = document.getElementById('synergy-content');
+            const accordionIcon = document.getElementById('accordion-icon');
+            synergyAccordion.addEventListener('click', () => {
+                if (synergyContent.style.maxHeight) {
+                    synergyContent.style.maxHeight = null;
+                    accordionIcon.style.transform = 'rotate(0deg)';
+                } else {
+                    synergyContent.style.maxHeight = synergyContent.scrollHeight + "px";
+                    accordionIcon.style.transform = 'rotate(45deg)';
+                }
+            });
+
+            // Incentives Chart
+            const ctx = document.getElementById('incentivesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Top 10', 'Top 25', 'Next 100', 'All Applicants'],
+                    datasets: [{
+                        label: 'Number of Opportunities',
+                        data: [10, 15, 75, 500],
+                        backgroundColor: [
+                            'rgba(230, 126, 34, 0.7)',
+                            'rgba(52, 152, 219, 0.7)',
+                            'rgba(149, 165, 166, 0.7)',
+                            'rgba(236, 240, 241, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(230, 126, 34, 1)',
+                            'rgba(52, 152, 219, 1)',
+                            'rgba(149, 165, 166, 1)',
+                            'rgba(236, 240, 241, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        let value = context.parsed.x;
+                                        if (context.label === 'Top 25') value += 10;
+                                        if (context.label === 'Next 100') value += 25;
+                                        if (context.label === 'All Applicants') {
+                                           return 'All participants receive benefits';
+                                        }
+                                        label += `${value} Startups`;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Startups Benefitting (Illustrative)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
