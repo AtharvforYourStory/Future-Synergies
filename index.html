@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shuru Kar AI & YourStory | Collaboration Proposal</title>
+    <title>Shuru-Kar AI by YourStory | Collaboration Proposal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Startup Growth (Warm Neutrals, Teal, Gold Accents) -->
+    <!-- Chosen Palette: Positive Vibes (Red, White, Grey, Pink) -->
     <!-- Application Structure Plan: A section-based SPA with a sticky navigation bar for easy access to key information. The structure prioritizes a logical flow for a pitch: starting with the high-level opportunity, detailing the process with an interactive timeline, showcasing the compelling incentives with a chart, defining the partnership roles, and ending with clear next steps. This non-linear, interactive structure allows busy stakeholders to quickly find the information most relevant to them, making it more engaging and effective than a linear document. -->
     <!-- Visualization & Content Choices:
         - Why Partner?: Info -> Goal: Inform -> Viz: Icon-driven cards (HTML/CSS) -> Interaction: Hover effects -> Justification: More scannable and visually engaging than a bullet list.
@@ -22,7 +22,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA;
+            background-color: #F8F9FA; /* Light Grey */
         }
         .chart-container {
             position: relative;
@@ -43,14 +43,14 @@
             border-bottom: 2px solid transparent;
         }
         .nav-link:hover, .nav-link.active {
-            color: #E67E22;
-            border-bottom-color: #E67E22;
+            color: #E74C3C; /* Deeper Red for hover */
+            border-bottom-color: #E74C3C;
         }
         .timeline-item.active .timeline-dot {
-            background-color: #E67E22;
+            background-color: #FF6B6B; /* Red/Pink */
         }
         .timeline-item.active .timeline-title {
-            color: #D35400;
+            color: #E74C3C; /* Deeper Red */
         }
         .accordion-content {
             max-height: 0;
@@ -63,7 +63,7 @@
 
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-gray-800">Shuru Kar AI <span class="text-[#E67E22]">&</span> YourStory</h1>
+            <h1 class="text-xl font-bold text-gray-800">Shuru-Kar AI <span class="text-[#FF6B6B]">by</span> YourStory</h1>
             <div class="hidden md:flex space-x-8">
                 <a href="#opportunity" class="nav-link font-medium pb-1">The Opportunity</a>
                 <a href="#how-it-works" class="nav-link font-medium pb-1">How It Works</a>
@@ -90,8 +90,8 @@
         <section id="hero" class="bg-white py-20 md:py-28">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Partner to Empower India's Next Innovators</h2>
-                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join us in a 2-week pilot to bring the Shuru Kar AI WhatsApp Copilot to your incubator network, offering your founders a direct path to the Bihar Idea Festival, funding, and national recognition.</p>
-                <a href="#opportunity" class="mt-8 inline-block bg-[#E67E22] text-white font-bold rounded-lg px-8 py-3 text-lg hover:bg-[#D35400] transition duration-300">Explore the Collaboration</a>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join us in introducing the Shuru-Kar AI WhatsApp Copilot—a tool developed by YourStory Media under The Bharat Project initiative—to your incubator network, offering your founders a direct path to the Bihar Idea Festival, funding, and national recognition.</p>
+                <a href="#opportunity" class="mt-8 inline-block bg-[#FF6B6B] text-white font-bold rounded-lg px-8 py-3 text-lg hover:bg-[#E74C3C] transition duration-300">Explore the Collaboration</a>
             </div>
         </section>
 
@@ -103,19 +103,19 @@
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
-                        <div class="text-4xl text-[#E67E22] mb-4">✨</div>
+                        <div class="text-4xl text-[#FF6B6B] mb-4">✨</div>
                         <h4 class="text-xl font-bold mb-2">Exclusive Access</h4>
                         <p class="text-gray-600">Be among the first to experience and shape our WhatsApp Copilot, an AI assistant built specifically for the challenges and opportunities in India's emerging startup landscape.</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
-                        <div class="text-4xl text-[#E67E22] mb-4">🏆</div>
+                        <div class="text-4xl text-[#FF6B6B] mb-4">🏆</div>
                         <h4 class="text-xl font-bold mb-2">Direct Founder Incentives</h4>
                         <p class="text-gray-600">Your founders get a chance to win ₹5 lakh, full scholarships, elite mentorship, and national publicity through the prestigious Bihar Idea Festival.</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
-                        <div class="text-4xl text-[#E67E22] mb-4">📢</div>
+                        <div class="text-4xl text-[#FF6B6B] mb-4">📢</div>
                         <h4 class="text-xl font-bold mb-2">Visibility & Impact</h4>
-                        <p class="text-gray-600">Your incubator's key role will be highlighted in all festival communications, amplifying your brand as a leader in fostering grassroots entrepreneurship.</p>
+                        <p class="text-gray-600">Your incubator’s key role will be highlighted, and YourStory would love to encourage your events, amplifying your brand as a leader in fostering grassroots entrepreneurship.</p>
                     </div>
                 </div>
             </div>
@@ -124,8 +124,8 @@
         <section id="how-it-works" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h3 class="text-4xl font-bold">How It Works: A 2-Week Pilot</h3>
-                    <p class="mt-3 text-gray-600 max-w-3xl mx-auto">We propose a straightforward 2-week pilot designed for maximum impact with minimal overhead for your team. Click on each phase below to see the details.</p>
+                    <h3 class="text-4xl font-bold">How It Works: Our Pilot Phases</h3>
+                    <p class="mt-3 text-gray-600 max-w-3xl mx-auto">We propose a straightforward pilot designed for maximum impact with minimal overhead for your team. Click on each phase below to see the details.</p>
                 </div>
                 
                 <div class="mb-12">
@@ -135,17 +135,17 @@
                             <div class="timeline-item cursor-pointer p-4" data-phase="promotion">
                                 <div class="timeline-dot relative w-6 h-6 mx-auto bg-gray-300 rounded-full border-4 border-white"></div>
                                 <h5 class="timeline-title font-bold mt-2 text-gray-500">Phase 1: Promotion</h5>
-                                <p class="text-sm text-gray-500">Days 1-3</p>
+                                <p class="text-sm text-gray-500"></p>
                             </div>
                             <div class="timeline-item cursor-pointer p-4" data-phase="onboarding">
                                 <div class="timeline-dot relative w-6 h-6 mx-auto bg-gray-300 rounded-full border-4 border-white"></div>
                                 <h5 class="timeline-title font-bold mt-2 text-gray-500">Phase 2: Onboarding</h5>
-                                <p class="text-sm text-gray-500">Days 4-14</p>
+                                <p class="text-sm text-gray-500"></p>
                             </div>
                             <div class="timeline-item cursor-pointer p-4" data-phase="feedback">
                                 <div class="timeline-dot relative w-6 h-6 mx-auto bg-gray-300 rounded-full border-4 border-white"></div>
                                 <h5 class="timeline-title font-bold mt-2 text-gray-500">Phase 3: Feedback</h5>
-                                <p class="text-sm text-gray-500">Days 4-14</p>
+                                <p class="text-sm text-gray-500"></p>
                             </div>
                         </div>
                     </div>
@@ -153,15 +153,15 @@
 
                 <div id="timeline-details" class="mt-8 p-8 bg-gray-50 rounded-lg min-h-[150px] transition-all duration-500">
                     <div id="promotion-content" class="timeline-content hidden">
-                        <h4 class="font-bold text-xl mb-2 text-[#D35400]">Promotion & Awareness (Days 1-3)</h4>
+                        <h4 class="font-bold text-xl mb-2 text-[#E74C3C]">Promotion & Awareness</h4>
                         <p class="text-gray-700">Your key deliverable is to announce the WhatsApp Copilot to your incubator network. We will provide ready-to-use materials for email, WhatsApp groups, and social media to ensure maximum reach through your E-cell and alumni channels.</p>
                     </div>
                     <div id="onboarding-content" class="timeline-content hidden">
-                        <h4 class="font-bold text-xl mb-2 text-[#D35400]">User Onboarding & Idea Submission (Days 4-14)</h4>
-                        <p class="text-gray-700">Encourage and support founders in your network as they use the Copilot to submit their startup ideas. We'll provide reminders to highlight the opportunity to be featured at the Bihar Idea Festival and win significant prizes.</p>
+                        <h4 class="font-bold text-xl mb-2 text-[#E74C3C]">User Onboarding & Idea Submission</h4>
+                        <p class="text-gray-700">Encourage and support all current founders and other people in your network who have an entrepreneurial mindset to use the Copilot and submit their startup ideas. We'll provide reminders to highlight the opportunity to be featured at the Bihar Idea Festival and win significant prizes.</p>
                     </div>
                     <div id="feedback-content" class="timeline-content hidden">
-                        <h4 class="font-bold text-xl mb-2 text-[#D35400]">Feedback Collection (Days 4-14)</h4>
+                        <h4 class="font-bold text-xl mb-2 text-[#E74C3C]">Feedback Collection</h4>
                         <p class="text-gray-700">Following Copilot usage, founders will receive a simple feedback form. Your role is to help distribute this form and follow up to maximize responses, helping us refine the product for India's entrepreneurs.</p>
                     </div>
                     <div id="timeline-placeholder" class="text-center text-gray-500">
@@ -180,11 +180,11 @@
                 <div class="lg:flex lg:items-center lg:space-x-12">
                     <div class="lg:w-1/2">
                         <div class="space-y-6">
-                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#E67E22]">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FF6B6B]">
                                 <h4 class="font-bold text-lg">Top 10 Ideas</h4>
                                 <p class="text-gray-600">₹5 lakh each, full scholarships, national publicity on YourStory, mentorship, and incubation support.</p>
                             </div>
-                             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-gray-400">
+                             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#A2A2A2]">
                                 <h4 class="font-bold text-lg">Top 25 Ideas</h4>
                                 <p class="text-gray-600">Free enrolment in the TiE Patna Nurture Program.</p>
                             </div>
@@ -212,35 +212,23 @@
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12">
                     <h3 class="text-4xl font-bold">Collaborative Framework</h3>
-                    <p class="mt-3 text-gray-600 max-w-3xl mx-auto">This partnership is part of the broader "The Bharat Project" initiative by YourStory. Below are the defined roles to ensure a successful and mutually beneficial collaboration.</p>
+                    <p class="mt-3 text-gray-600 max-w-3xl mx-auto">This partnership is part of the broader "The Bharat Project" initiative by YourStory. Our collaboration is designed for mutual benefit, focusing specifically on the Shuru-Kar AI Bot.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-x-12">
-                    <div>
-                        <h4 class="text-2xl font-bold mb-4 text-center md:text-left">Role of the Incubator</h4>
-                        <ul class="space-y-3 list-disc list-inside text-gray-700">
-                            <li>Support outreach and promotion of initiatives within its founder ecosystem.</li>
-                            <li>Nominate promising startups for national showcases and events.</li>
-                            <li>Facilitate access for story shoots, interviews, and documentation.</li>
-                            <li>Enable The Bharat Project to plug into startup cohorts via AI Co-Pilot & masterclasses.</li>
-                            <li>Collaborate on co-hosting regional founder-led events (where feasible).</li>
-                            <li>Share non-confidential aggregated data to enrich our knowledge base.</li>
-                        </ul>
-                    </div>
-                    <div class="mt-12 md:mt-0">
-                        <h4 class="text-2xl font-bold mb-4 text-center md:text-left">Role of YourStory</h4>
-                        <ul class="space-y-3 list-disc list-inside text-gray-700">
-                            <li>Act as the knowledge and execution partner for The Bharat Project.</li>
-                            <li>Create and deploy startup-focused digital content, tools, and formats.</li>
-                            <li>Organize the Build for Bharat Fellowship and mentorship programs.</li>
-                            <li>Curate and document 2,000+ high-potential startups from across the country.</li>
-                        </ul>
-                    </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+                    <h4 class="text-2xl font-bold mb-4 text-center">Your Role in Shuru-Kar AI</h4>
+                    <p class="text-gray-700">Your incubator's primary role is to empower your network to engage with the Shuru-Kar AI Bot. This involves <b>sharing our content to encourage maximum participation</b> from <b>all current founders and other individuals in your network with an entrepreneurial mindset</b>. Your team will also facilitate the <b>collection of feedback via the provided Google form</b> to help us refine this innovative tool for pitch document creation.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-bold mb-4 text-center">YourStory's Commitment in Return</h4>
+                    <p class="text-gray-700">In return for your valuable support in promoting Shuru-Kar AI, YourStory is committed to enhancing your visibility and offering tangible benefits. We would love to <b>encourage and promote events conducted by your university</b>, amplifying your institution's leadership in the startup ecosystem. Furthermore, your network can look forward to <b>Captable subscriptions at subsidized prices</b> and <b>enhanced visibility for your university's events and initiatives</b> across YourStory's extensive platforms, fostering a strong, synergistic relationship.</p>
                 </div>
 
                 <div class="mt-16 bg-gray-50 p-8 rounded-lg">
                     <button id="synergy-accordion" class="w-full flex justify-between items-center text-left">
                         <h4 class="text-2xl font-bold">Long-Term Synergy & Future Opportunities</h4>
-                        <span id="accordion-icon" class="text-2xl font-bold text-[#E67E22] transform transition-transform duration-300">+</span>
+                        <span id="accordion-icon" class="text-2xl font-bold text-[#FF6B6B] transform transition-transform duration-300">+</span>
                     </button>
                     <div id="synergy-content" class="accordion-content mt-4">
                         <p class="text-gray-700">Strong participation from your college network signals significant regional interest. Given YourStory's commitment to the ecosystem, this pilot can unlock deeper future collaborations:</p>
@@ -256,15 +244,13 @@
 
         <section id="next-steps" class="py-20">
              <div class="container mx-auto px-6 text-center">
-                 <h3 class="text-4xl font-bold">Ready to Empower Your Founders?</h3>
-                 <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Let's take the next steps to bring this opportunity to your network. At the end of the pilot, we will provide a full report on the engagement and impact.</p>
-                 <div class="mt-10 max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
-                    <h4 class="font-bold text-xl mb-4">Proposed Next Steps</h4>
-                    <ul class="text-left space-y-3">
-                        <li class="flex items-start"><span class="text-[#E67E22] mr-3 mt-1">✓</span>Schedule a kickoff call to align on strategy.</li>
-                        <li class="flex items-start"><span class="text-[#E67E22] mr-3 mt-1">✓</span>Receive our ready-to-use promotional materials.</li>
-                        <li class="flex items-start"><span class="text-[#E67E22] mr-3 mt-1">✓</span>Get access to a dashboard to track progress.</li>
-                    </ul>
+                 <h3 class="text-4xl font-bold">Ready to Participate in Shuru-Kar AI Bot User Research?</h3>
+                 <p class="mt-3 text-gray-600 max-w-2xl mx-auto">We're thrilled to invite your network to participate in user research for the Shuru-Kar AI Bot, an innovative tool for pitch document creation, now available for beta testing as part of The Bharat Project initiative by YourStory Media.</p>
+                 <div class="mt-10 max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg text-left">
+                    <p class="mb-4 text-gray-700">Its current goal is to accurately grasp your ideas and guide you through essential pitch aspects. We request thorough testing and feedback via this Google form: <a href="https://forms.gle/RhQT2uPJVavaUPoKA" target="_blank" class="text-[#FF6B6B] hover:underline break-words">https://forms.gle/RhQT2uPJVavaUPoKA</a>. Reviewing the form questions beforehand can help facilitate a more effective Q&A.</p>
+                    <p class="mb-4 text-gray-700">The bot currently supports <b>Hindi and English</b>, responding to audio and text.</p>
+                    <p class="mb-4 text-gray-700">To get started, <b>save this number: ‪+91 97429 56009‬ and kick off your convo with a Hi!</b></p>
+                    <p class="text-sm text-gray-600">PS: By participating and selecting "Yes" for updates in the form, you'll get early access to the full potential of Shurukar AI Bot and guaranteed updates. We value your input in shaping this tool for users like you.</p>
                  </div>
              </div>
         </section>
@@ -272,7 +258,7 @@
 
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Shuru Kar AI & YourStory. All Rights Reserved.</p>
+            <p>&copy; 2025 Shuru-Kar AI by YourStory. All Rights Reserved.</p>
             <p class="text-sm text-gray-400 mt-2">Let's empower the next wave of Indian innovation, together.</p>
         </div>
     </footer>
@@ -356,16 +342,16 @@
                         label: 'Number of Opportunities',
                         data: [10, 15, 75, 500],
                         backgroundColor: [
-                            'rgba(230, 126, 34, 0.7)',
-                            'rgba(52, 152, 219, 0.7)',
-                            'rgba(149, 165, 166, 0.7)',
-                            'rgba(236, 240, 241, 0.7)'
+                            'rgba(255, 107, 107, 0.7)', /* Red/Pink */
+                            'rgba(162, 162, 162, 0.7)', /* Grey */
+                            'rgba(236, 240, 241, 0.7)', /* Light Grey */
+                            'rgba(255, 255, 255, 0.7)'  /* White */
                         ],
                         borderColor: [
-                            'rgba(230, 126, 34, 1)',
-                            'rgba(52, 152, 219, 1)',
-                            'rgba(149, 165, 166, 1)',
-                            'rgba(236, 240, 241, 1)'
+                            'rgba(255, 107, 107, 1)',
+                            'rgba(162, 162, 162, 1)',
+                            'rgba(236, 240, 241, 1)',
+                            'rgba(255, 255, 255, 1)'
                         ],
                         borderWidth: 1
                     }]
@@ -387,8 +373,9 @@
                                     }
                                     if (context.parsed.x !== null) {
                                         let value = context.parsed.x;
-                                        if (context.label === 'Top 25') value += 10;
-                                        if (context.label === 'Next 100') value += 25;
+                                        // Adjust value to reflect cumulative or full count for tooltip clarity
+                                        if (context.label === 'Top 25') value = 25;
+                                        if (context.label === 'Next 100') value = 125;
                                         if (context.label === 'All Applicants') {
                                            return 'All participants receive benefits';
                                         }
